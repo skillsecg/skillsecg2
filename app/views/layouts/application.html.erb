@@ -3,12 +3,22 @@
   <head>
     <title>SkillsEcg1</title>
     <%= csrf_meta_tags %>
-
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %> 
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <script src="https://use.fontawesome.com/09ab215da4.js"></script>
   </head>
+<%if controller_name.to_s == 'sessions'%>
+  <body style="background-color: #333333 !important;font-family: 'Roboto', sans-serif;">
+<%else%>
+  <body style="font-family: 'Roboto', sans-serif;">
+<%end%>
+	  <div class="container-fluid">
+       <p class="notice"><%= notice %></p>
+       <p class="alert"><%= alert %></p>
 
-  <body>
-    <%= yield %>
+	    <%= yield %>
+	  </div>  
   </body>
 </html>
